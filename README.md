@@ -39,3 +39,13 @@ npx tailwindcss init -p
 npm install react-router-dom axios notistack react-icons
 
 to run --> npm run dev
+
+
+
+![Image Alt Text](table.png)
+![Image Alt Text](card.png)
+![Image Alt Text](book-model.png)
+![Image Alt Text](show-book.png)
+![Image Alt Text](add-book.png)
+![Image Alt Text](edit-book.png)
+![Image Alt Text](delete-book.png)
