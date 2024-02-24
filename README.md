@@ -41,17 +41,11 @@ npm install react-router-dom axios notistack react-icons
 to run --> npm run dev
 
 
-<br />
+
 ![Image Alt Text](screenshots/table.png)
-<br />
 ![Image Alt Text](screenshots/card.png)
-<br />
 ![Image Alt Text](screenshots/book-model.png)
-<br />
 ![Image Alt Text](screenshots/show-book.png)
-<br />
 ![Image Alt Text](screenshots/add-book.png)
-<br />
 ![Image Alt Text](screenshots/edit-book.png)
-<br />
 ![Image Alt Text](screenshots/delete-book.png)
