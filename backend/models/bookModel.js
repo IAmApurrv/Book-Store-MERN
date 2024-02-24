@@ -14,6 +14,10 @@ const bookSchema = mongoose.Schema(
       type: Number,
       required: true,
     },
+    cost: {
+      type: Number,
+      required: true,
+    },
   },
   {
     timestamps: true,
@@ -26,5 +30,6 @@ export const Book = mongoose.model('Book', bookSchema);
 // {
 //   "title": "t1",
 //   "author": "a1",
-//   "publishYear": "2000"
+//   "publishYear": "2000",
+//   "cost": "100"
 // }

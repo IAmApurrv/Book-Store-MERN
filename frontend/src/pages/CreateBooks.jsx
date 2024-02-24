@@ -8,6 +8,7 @@ import { useSnackbar } from 'notistack';
 const CreateBooks = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
+  const [cost, setCost] = useState('');
   const [publishYear, setPublishYear] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
@@ -17,7 +18,8 @@ const CreateBooks = () => {
     const data = {
       title,
       author,
-      publishYear,
+      cost,
+      publishYear
     };
     setLoading(true);
     axios
@@ -38,27 +40,32 @@ const CreateBooks = () => {
   return (
     <div className='p-4'>
       <BackButton />
-      <h1 className='text-3xl my-8 font-bold text-blue-900 text-center'>Create Book</h1>
+      <h1 className='text-3xl my-8 font-bold text-blue-900 text-center'>Add Book</h1>
       {loading ? <Spinner /> : ''}
 
-      <div className='flex flex-col border-2 border-sky-400 rounded-xl w-[600px] p-4 mx-auto'>
+      <div className='bg-cyan-900 flex flex-col rounded-xl w-[600px] p-4 mx-auto'>
 
         <div className='my-4'>
           <label className='text-xl mr-4 text-gray-500 font-bold'>Title</label>
-          <input type='text' value={title} onChange={(e) => setTitle(e.target.value)} className='border-2 border-gray-500 px-4 py-2 w-full' />
+          <input type='text' value={title} onChange={(e) => setTitle(e.target.value)} className='px-4 py-2 w-full' />
         </div>
 
         <div className='my-4'>
           <label className='text-xl mr-4 text-gray-500 font-bold'>Author</label>
-          <input type='text' value={author} onChange={(e) => setAuthor(e.target.value)} className='border-2 border-gray-500 px-4 py-2  w-full ' />
+          <input type='text' value={author} onChange={(e) => setAuthor(e.target.value)} className='px-4 py-2 w-full' />
+        </div>
+
+        <div className='my-4'>
+          <label className='text-xl mr-4 text-gray-500 font-bold'>Cost</label>
+          <input type='text' value={cost} onChange={(e) => setCost(e.target.value)} className='px-4 py-2 w-full' />
         </div>
 
         <div className='my-4'>
           <label className='text-xl mr-4 text-gray-500 font-bold'>Publish Year</label>
-          <input type='number' value={publishYear} onChange={(e) => setPublishYear(e.target.value)} className='border-2 border-gray-500 px-4 py-2  w-full ' />
+          <input type='number' value={publishYear} onChange={(e) => setPublishYear(e.target.value)} className='px-4 py-2 w-full' />
         </div>
 
-        <button className='p-2 bg-sky-300 mt-8 font-bold text-blue-900' onClick={handleSaveBook}>Save</button>
+        <button className='p-2 bg-cyan-300 mt-8 font-bold text-blue-900' onClick={handleSaveBook}>Save</button>
 
       </div>
 

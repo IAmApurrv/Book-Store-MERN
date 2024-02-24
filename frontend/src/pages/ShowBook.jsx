@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { FaRupeeSign } from "react-icons/fa";
 import { useParams } from 'react-router-dom';
 import BackButton from '../components/BackButton';
 import Spinner from '../components/Spinner';
@@ -30,7 +31,7 @@ const ShowBook = () => {
       {loading ? (
         <Spinner />
       ) : (
-        <div className='flex flex-col justify-center border-2 border-sky-400 rounded-xl w-fit p-4 mx-auto'>
+        <div className='bg-cyan-900 text-white flex flex-col justify-center rounded-xl w-fit p-4 mx-auto'>
           <div className='my-4'>
             <span className='text-xl mr-4 text-gray-500'>Id -</span>
             <b>{book._id}</b>
@@ -42,6 +43,10 @@ const ShowBook = () => {
           <div className='my-4'>
             <span className='text-xl mr-4 text-gray-500'>Author -</span>
             <b>{book.author}</b>
+          </div>
+          <div className='my-4'>
+            <span className='text-xl mr-4 text-gray-500'>Cost -</span>
+            <b>{book.cost} <span className="inline-block align-middle"><FaRupeeSign /></span></b>
           </div>
           <div className='my-4'>
             <span className='text-xl mr-4 text-gray-500'>Publish Year -</span>

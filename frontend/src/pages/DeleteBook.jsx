@@ -34,9 +34,9 @@ const DeleteBook = () => {
       <h1 className='text-3xl my-8 font-bold text-blue-900 text-center'>Delete Book</h1>
       {loading ? <Spinner /> : ''}
 
-      <div className='flex flex-col items-center border-2 border-sky-400 rounded-xl w-[600px] p-8 mx-auto'>
+      <div className='bg-cyan-900 text-white flex flex-col items-center rounded-xl w-[600px] p-8 mx-auto'>
         <h3 className='text-2xl font-semibold'>Are you sure you wish to remove this book ?</h3>
-        <button className='p-4 bg-red-600 text-white m-8 w-full font-bold' onClick={handleDeleteBook}>Delete</button>
+        <button className='p-4 bg-red-600 m-8 w-full font-bold' onClick={handleDeleteBook}>Delete</button>
       </div>
 
     </div>
