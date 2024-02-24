@@ -42,10 +42,10 @@ to run --> npm run dev
 
 
 
-![Image Alt Text](table.png)
-![Image Alt Text](card.png)
-![Image Alt Text](book-model.png)
-![Image Alt Text](show-book.png)
-![Image Alt Text](add-book.png)
-![Image Alt Text](edit-book.png)
-![Image Alt Text](delete-book.png)
+![Image Alt Text](screenshots/table.png)
+![Image Alt Text](screenshots/card.png)
+![Image Alt Text](screenshots/book-model.png)
+![Image Alt Text](screenshots/show-book.png)
+![Image Alt Text](screenshots/add-book.png)
+![Image Alt Text](screenshots/edit-book.png)
+![Image Alt Text](screenshots/delete-book.png)
