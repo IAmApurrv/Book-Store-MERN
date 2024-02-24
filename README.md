@@ -1,14 +1,14 @@
-backend -->
+# backend -->
 
-cd backend
-npm init -y
-npm i express nodemon
-npm i mongoose
-npm i cors
+## cd backend
+## npm init -y
+## npm i express nodemon
+## npm i mongoose
+## npm i cors
 
-to run -->
-  connect database (https://cloud.mongodb.com/v2/65d8a74b6cd3772084bc474e#/overview?connectCluster=BookStore-MERN)
-  npm run dev
+## to run -->
+  ## connect database (https://cloud.mongodb.com/v2/65d8a74b6cd3772084bc474e#/overview?connectCluster=BookStore-MERN)
+  ## npm run dev
 
 POST /books: Create a new book.
 GET /books: Get all books.
