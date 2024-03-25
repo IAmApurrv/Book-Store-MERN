@@ -74,13 +74,14 @@ const EditBook = () => {
 
         <div className='my-4'>
           <label className='text-xl mr-4 text-gray-500 font-bold'>Cost</label>
-          <input type='text' value={cost} onChange={(e) => setCost(e.target.value)} className='px-4 py-2 w-full' />
+          <input type='number' value={cost} onChange={(e) => setCost(e.target.value)} className='px-4 py-2 w-full' />
         </div>
 
         <div className='my-4'>
           <label className='text-xl mr-4 text-gray-500 font-bold'>Publish Year</label>
           <input type='number' value={publishYear} onChange={(e) => setPublishYear(e.target.value)} className='px-4 py-2 w-full' />
         </div>
+
         <button className='p-2 bg-cyan-300 mt-8 font-bold text-blue-900' onClick={handleEditBook}>Edit</button>
 
       </div>

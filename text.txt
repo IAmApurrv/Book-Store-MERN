@@ -10,7 +10,7 @@ to run -->
   connect database (https://cloud.mongodb.com/v2/65d8a74b6cd3772084bc474e#/overview?connectCluster=BookStore-MERN)
   npm run dev
 
-POST /books: Create a new book.
+POST /books: Add a new book.
 GET /books: Get all books.
 GET /books/:id: Get a specific book by its ID.
 PUT /books/:id: Update a book by its ID.

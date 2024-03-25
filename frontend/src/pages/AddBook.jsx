@@ -5,7 +5,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useSnackbar } from 'notistack';
 
-const CreateBooks = () => {
+const AddBook = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [cost, setCost] = useState('');
@@ -57,7 +57,7 @@ const CreateBooks = () => {
 
         <div className='my-4'>
           <label className='text-xl mr-4 text-gray-500 font-bold'>Cost</label>
-          <input type='text' value={cost} onChange={(e) => setCost(e.target.value)} className='px-4 py-2 w-full' />
+          <input type='number' value={cost} onChange={(e) => setCost(e.target.value)} className='px-4 py-2 w-full' />
         </div>
 
         <div className='my-4'>
@@ -73,4 +73,4 @@ const CreateBooks = () => {
   );
 }
 
-export default CreateBooks
+export default AddBook
