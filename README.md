@@ -63,7 +63,7 @@ Once both servers are running, you can access the application through your web b
 - **Card View**: ![Card View](screenshots/card.png)
 - **Book Model**: ![Book Model](screenshots/book-model.png)
 - **Show Book**: ![Show Book](screenshots/show-book.png)
-- - **Add Book**: ![Add Book](screenshots/add-book.png)
+- **Add Book**: ![Add Book](screenshots/add-book.png)
 - **Edit Book**: ![Edit Book](screenshots/edit-book.png)
 - **Delete Book**: ![Delete Book](screenshots/delete-book.png)
 
