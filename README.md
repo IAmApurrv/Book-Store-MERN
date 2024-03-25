@@ -1,94 +1,41 @@
-# Book-Store-MERN
+backend -->
 
-This is a MERN (MongoDB, Express.js, React.js, Node.js) project for a simple book store application that performs CRUD operations.
-
-## Running the Project
-
-To run the Book-Store-MERN project locally, follow these steps:
-
-### 1. Clone the Repository
-
-```
-git clone https://github.com/IAmApurrv/Book-Store-MERN.git
-```
-
-### 2. Navigate to the Backend Folder
-
-```
 cd backend
-```
+npm init -y
+npm i express nodemon
+npm i mongoose
+npm i cors
 
-### 3. Install Backend Dependencies
+to run -->
+  connect database (https://cloud.mongodb.com/v2/65d8a74b6cd3772084bc474e#/overview?connectCluster=BookStore-MERN)
+  npm run dev
 
-```
-npm install
-```
+POST /books: Create a new book.
+GET /books: Get all books.
+GET /books/:id: Get a specific book by its ID.
+PUT /books/:id: Update a book by its ID.
+DELETE /books/:id: Delete a book by its ID.
 
-### 4. Start the Backend Server
-
-```
-npm run dev
-```
-
-The backend server will start running on port 5555.
-
-### 5. Open Another Terminal and Navigate to the Frontend Folder
-
-```
-cd frontend
-```
-
-### 6. Install Frontend Dependencies
-
-```
-npm install
-```
-
-### 7. Start the Frontend Server
-
-```
-npm run dev
-```
-
-The frontend server will start running on port 5173.
-
-### 8. Access the Application
-
-Once both servers are running, you can access the application through your web browser at http://localhost:5173.
+{
+  "title": "t1",
+  "author": "a1",
+  "publishYear": "2000".
+  "cost": "100"
+}
 
 
-## Screenshots
-
-- **Table View**: ![Table View](screenshots/table.png)
-- **Card View**: ![Card View](screenshots/card.png)
-- **Book Model**: ![Book Model](screenshots/book-model.png)
-- - **Add Book**: ![Add Book](screenshots/add-book.png)
-- **Show Book**: ![Show Book](screenshots/show-book.png)
-- **Edit Book**: ![Edit Book](screenshots/edit-book.png)
-- **Delete Book**: ![Delete Book](screenshots/delete-book.png)
 
 
-## Backend
+frontend -->
 
-The backend is built with Express.js and MongoDB Atlas online database. It handles API requests and interacts with the MongoDB database.
+npm create vite@latest (project name --> frontend)
+c frontend
+npm i
 
-### Dependencies
+https://tailwindcss.com/ --> https://tailwindcss.com/docs/guides/vite
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
 
-- cors: ^2.8.5
-- express: ^4.18.2
-- mongodb: ^6.3.0
-- mongoose: ^8.2.0
-- nodemon: ^3.1.0
+npm install react-router-dom axios notistack react-icons
 
-## Frontend
-
-The frontend is developed using Vite React and Tailwind CSS. It provides the user interface for the book store application.
-
-### Dependencies
-
-- axios: ^1.6.7
-- notistack: ^3.0.1
-- react: ^18.2.0
-- react-dom: ^18.2.0
-- react-icons: ^5.0.1
-- react-router-dom: ^6.22.1
+to run --> npm run dev
