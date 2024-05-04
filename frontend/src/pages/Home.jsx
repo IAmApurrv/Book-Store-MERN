@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { IoMdAddCircle } from "react-icons/io";
 import BooksTable from '../components/home/BooksTable';
 import BooksCard from '../components/home/BooksCard';
+import { MdAddCircleOutline } from 'react-icons/md';
 
 const Home = () => {
   const [books, setBooks] = useState([]);
@@ -33,16 +34,16 @@ const Home = () => {
         <button className={`type-btn ${showType === 'card' ? 'bg-cyan-900 text-white' : 'bg-cyan-300 text-gray-800'} px-4 py-2 rounded-lg`} onClick={() => setShowType('card')}><b>Card</b></button>
       </div>
 
-      <div className='flex justify-between items-center mb-8'>
-        <h1 className='text-3xl my-8 font-bold text-blue-900'>Books List</h1>
+      <div className='flex justify-end items-center'>
+        {/* <h1 className='text-3xl my-8 font-bold text-blue-900'>Books List</h1> */}
 
         {/* <Link to='/books/create'>
           <MdOutlineAddBox className='text-cyan-800 text-4xl' />
         </Link> */}
-        <Link to='/books/create' className='hover:bg-cyan-300 px-4 py-1 rounded-lg'>
+        <Link to='/books/create' className='hover:bg-cyan-300 px-1 py-1 mr-4 rounded-lg'>
           <div className="flex items-center justify-center rounded-lg p-4">
             <h1 className="text-center text-lg font-bold text-blue-900">Add a new Book</h1>
-            <IoMdAddCircle className='text-4xl' />
+            <IoMdAddCircle className='text-3xl' />
           </div>
         </Link>
 
