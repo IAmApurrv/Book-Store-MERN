@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { IoMdAddCircle } from "react-icons/io";
 import BooksTable from '../components/home/BooksTable';
 import BooksCard from '../components/home/BooksCard';
-import { MdAddCircleOutline } from 'react-icons/md';
 
 const Home = () => {
   const [books, setBooks] = useState([]);

@@ -29,7 +29,7 @@ DELETE /books/:id: Delete a book by its ID.
 frontend -->
 
 npm create vite@latest (project name --> frontend)
-c frontend
+cd frontend
 npm i
 
 https://tailwindcss.com/ --> https://tailwindcss.com/docs/guides/vite
