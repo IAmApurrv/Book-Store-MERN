@@ -30,7 +30,7 @@ npm install
 npm run dev
 ```
 
-The backend server will start running on port 5555.
+The backend server will start running on port 3000.
 
 ### 5. Open Another Terminal and Navigate to the Frontend Folder
 
