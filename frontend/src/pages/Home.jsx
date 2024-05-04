@@ -39,12 +39,26 @@ const Home = () => {
         {/* <Link to='/books/create'>
           <MdOutlineAddBox className='text-cyan-800 text-4xl' />
         </Link> */}
-        <Link to='/books/create' className='hover:bg-cyan-300 px-1 py-1 mr-4 rounded-lg'>
+        {/* <Link to='/books/create' className='hover:bg-cyan-300 px-1 py-1 mr-4 rounded-lg'>
           <div className="flex items-center justify-center rounded-lg p-4">
             <h1 className="text-center text-lg font-bold text-blue-900">Add a new Book</h1>
-            <IoMdAddCircle className='text-3xl' />
+            <IoMdAddCircle className='text-3xl ml-2' />
+          </div>
+        </Link> */}
+        <Link to='/books/create' className=' bg-cyan-900 text-white px-1 py-1 mr-2 rounded-lg hover:bg-cyan-300 hover:text-blue-900'>
+          <div className="flex items-center text-center rounded-lg py-2">
+            <div className="w-3/4">
+              <h1 className="text-lg font-bold">
+                Add a new Book
+              </h1>
+            </div>
+            <div className="w-1/4 flex">
+              <IoMdAddCircle className='text-3xl' />
+            </div>
           </div>
         </Link>
+
+
 
       </div>
 

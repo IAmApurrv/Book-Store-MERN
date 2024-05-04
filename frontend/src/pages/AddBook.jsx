@@ -46,26 +46,26 @@ const AddBook = () => {
       <div className='bg-cyan-900 flex flex-col rounded-xl w-[600px] p-4 mx-auto'>
 
         <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500 font-bold'>Title</label>
+          <label className='text-xl mr-4 text-gray-300 font-bold'>Title</label>
           <input type='text' value={title} onChange={(e) => setTitle(e.target.value)} className='px-4 py-2 w-full' />
         </div>
 
         <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500 font-bold'>Author</label>
+          <label className='text-xl mr-4 text-gray-300 font-bold'>Author</label>
           <input type='text' value={author} onChange={(e) => setAuthor(e.target.value)} className='px-4 py-2 w-full' />
         </div>
 
         <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500 font-bold'>Cost</label>
+          <label className='text-xl mr-4 text-gray-300 font-bold'>Cost</label>
           <input type='number' value={cost} onChange={(e) => setCost(e.target.value)} className='px-4 py-2 w-full' />
         </div>
 
         <div className='my-4'>
-          <label className='text-xl mr-4 text-gray-500 font-bold'>Publish Year</label>
+          <label className='text-xl mr-4 text-gray-300 font-bold'>Publish Year</label>
           <input type='number' value={publishYear} onChange={(e) => setPublishYear(e.target.value)} className='px-4 py-2 w-full' />
         </div>
 
-        <button className='p-2 bg-cyan-300 mt-8 font-bold text-blue-900' onClick={handleSaveBook}>Save</button>
+        <button className='p-2 bg-cyan-300 mt-8 font-bold text-blue-900' onClick={handleSaveBook}>Add</button>
 
       </div>
 
