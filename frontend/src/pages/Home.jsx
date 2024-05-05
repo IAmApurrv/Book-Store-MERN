@@ -45,7 +45,7 @@ const Home = () => {
             <IoMdAddCircle className='text-3xl ml-2' />
           </div>
         </Link> */}
-        <Link to='/books/create' className=' bg-cyan-900 text-white px-1 py-1 mr-2 rounded-lg hover:bg-cyan-300 hover:text-blue-900'>
+        <Link to='/books/create' className='px-1 py-1 mr-2 rounded-lg hover:bg-cyan-900 hover:text-white'>
           <div className="flex items-center text-center rounded-lg py-2">
             <div className="w-3/4">
               <h1 className="text-lg font-bold">

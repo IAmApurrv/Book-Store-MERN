@@ -31,7 +31,7 @@
 # frontend -->
 
     1. npm create vite@latest (project name --> frontend)
-    2. c frontend
+    2. cd frontend
     3. npm i
     4. npm install react-router-dom axios notistack react-icons
 
