@@ -11,22 +11,37 @@ const EditBook = () => {
   const [imageURL, setImageURL] = useState('');
   const [description, setDescription] = useState('');
   const [cost, setCost] = useState('');
-  const [publishYear, setPublishYear] = useState('');
+  const [publishDate, setPublishDate] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { id } = useParams();
   const { enqueueSnackbar } = useSnackbar();
 
+  const formatDate = (dateString) => {
+    if (!dateString) return ''; // Return an empty string if dateString is not provided
+
+    const dateObject = new Date(dateString);
+
+    // Format the date in yyyy-MM-dd format
+    const year = dateObject.getFullYear();
+    const month = (dateObject.getMonth() + 1).toString().padStart(2, '0'); // Adding 1 to month because it's zero-indexed
+    const day = dateObject.getDate().toString().padStart(2, '0');
+
+    return `${year}-${month}-${day}`;
+  };
+
   useEffect(() => {
     setLoading(true);
     axios.get(`http://localhost:3000/books/${id}`)
       .then((response) => {
+        // const { title, author, publishDate, imageURL, description, cost } = response.data;
         setTitle(response.data.title);
         setAuthor(response.data.author);
+        // setPublishDate(response.data.publishDate);
+        setPublishDate(formatDate(response.data.publishDate));
         setImageURL(response.data.imageURL);
         setDescription(response.data.description);
         setCost(response.data.cost);
-        setPublishYear(response.data.publishYear);
         setLoading(false);
       }).catch((error) => {
         setLoading(false);
@@ -39,10 +54,10 @@ const EditBook = () => {
     const data = {
       title,
       author,
+      publishDate,
       imageURL,
       description,
-      cost,
-      publishYear
+      cost
     };
     setLoading(true);
     axios
@@ -79,6 +94,11 @@ const EditBook = () => {
         </div>
 
         <div className='my-2'>
+          <label className='text-xl mr-4 text-gray-300 font-bold'>Publish Date</label>
+          <input type='date' value={publishDate} onChange={(e) => setPublishDate(e.target.value)} className='px-4 py-2 w-full' />
+        </div>
+
+        <div className='my-2'>
           <label className='text-xl mr-4 text-gray-300 font-bold'>Image URL</label>
           <input type='text' value={imageURL} onChange={(e) => setImageURL(e.target.value)} className='px-4 py-2 w-full' />
         </div>
@@ -92,11 +112,6 @@ const EditBook = () => {
         <div className='my-2'>
           <label className='text-xl mr-4 text-gray-300 font-bold'>Cost</label>
           <input type='number' value={cost} onChange={(e) => setCost(e.target.value)} className='px-4 py-2 w-full' />
-        </div>
-
-        <div className='my-2'>
-          <label className='text-xl mr-4 text-gray-300 font-bold'>Publish Year</label>
-          <input type='number' value={publishYear} onChange={(e) => setPublishYear(e.target.value)} className='px-4 py-2 w-full' />
         </div>
 
         <button className='p-2 bg-cyan-300 mt-4 font-bold text-blue-900 hover:bg-cyan-600 hover:text-white' onClick={handleEditBook}>Update</button>

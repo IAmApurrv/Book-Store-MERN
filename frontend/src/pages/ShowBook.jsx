@@ -24,7 +24,23 @@ const ShowBook = () => {
       });
   }, []);
 
+  // const formatDate = (dateString) => {
+  //   const dateObject = new Date(dateString);
+  //   const dayAndDate = dateObject.toLocaleDateString(undefined, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+  //   return `${dayAndDate}`;
+  // };
   const formatDate = (dateString) => {
+    const dateObject = new Date(dateString);
+    const day = dateObject.toLocaleDateString(undefined, { weekday: 'long' });
+    const dayOfMonth = dateObject.toLocaleDateString(undefined, { day: 'numeric' });
+    const month = dateObject.toLocaleDateString(undefined, { month: 'long' });
+    const year = dateObject.toLocaleDateString(undefined, { year: 'numeric' });
+
+    return `${day}, ${dayOfMonth} ${month} ${year}`;
+  };
+
+
+  const formatDate2 = (dateString) => {
     const options = {
       weekday: 'long',
       year: 'numeric',
@@ -38,7 +54,7 @@ const ShowBook = () => {
 
     const dateObject = new Date(dateString);
     const time = dateObject.toLocaleTimeString(undefined, { hour: 'numeric', minute: 'numeric' });
-    const dayAndDate = dateObject.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' });
+    const dayAndDate = dateObject.toLocaleDateString(undefined, { day: 'numeric', month: 'long', year: 'numeric' });
 
     return `${time}, ${dayAndDate}`;
   };
@@ -74,8 +90,8 @@ const ShowBook = () => {
                   <td>: &nbsp;&nbsp;&nbsp;<b>{book.cost} ₹</b></td>
                 </tr>
                 <tr>
-                  <td className='text-xl text-gray-300'>Publish Year &nbsp;</td>
-                  <td>: &nbsp;&nbsp;&nbsp;<b>{book.publishYear}</b></td>
+                  <td className='text-xl text-gray-300'>Publish Date &nbsp;</td>
+                  <td>: &nbsp;&nbsp;&nbsp;<b>{formatDate(book.publishDate)}</b></td>
                 </tr>
               </table>
             </div>
@@ -84,11 +100,11 @@ const ShowBook = () => {
               <table>
                 <tr>
                   <td className='text-gray-300'>Book added at &nbsp;</td>
-                  <td>: &nbsp;&nbsp;<b>{formatDate(book.createdAt)}</b></td>
+                  <td>: &nbsp;&nbsp;<b>{formatDate2(book.createdAt)}</b></td>
                 </tr>
                 <tr>
                   <td className='text-gray-300'>Last update at &nbsp;</td>
-                  <td>: &nbsp;&nbsp;<b>{formatDate(book.updatedAt)}</b></td>
+                  <td>: &nbsp;&nbsp;<b>{formatDate2(book.updatedAt)}</b></td>
                 </tr>
               </table>
             </div>

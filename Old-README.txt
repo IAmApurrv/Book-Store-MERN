@@ -16,15 +16,6 @@
 4. PUT /books/:id: Update a book by its ID.
 5. DELETE /books/:id: Delete a book by its ID.
 
-```
-{
-  "title": "t1",
-  "author": "a1",
-  "publishYear": "2000".
-  "cost": "100"
-}
-```
-
 
 
 

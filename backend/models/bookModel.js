@@ -10,6 +10,10 @@ const bookSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    publishDate: {
+      type: Date,
+      required: true,
+    },
     imageURL: {
       type: String,
       required: true,
@@ -22,10 +26,10 @@ const bookSchema = mongoose.Schema(
       type: Number,
       required: true,
     },
-    publishYear: {
-      type: Number,
-      required: true,
-    },
+    // publishYear: {
+    //   type: Number,
+    //   required: true,
+    // },
   },
   {
     timestamps: true,
@@ -33,12 +37,3 @@ const bookSchema = mongoose.Schema(
 );
 
 export const Book = mongoose.model('Book', bookSchema);
-
-// {
-//   "title": "t1",
-//   "author": "a1",
-//   "imageURL": "image.png",
-//   "description": "this is description",
-//   "cost": "100",
-//   "publishYear": "2000"
-// }

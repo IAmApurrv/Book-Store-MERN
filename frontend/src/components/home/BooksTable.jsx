@@ -15,6 +15,21 @@ const BooksTable = ({ books }) => {
     setShowModal(true);
   };
 
+  // const formatDate = (dateString) => {
+  //   const dateObject = new Date(dateString);
+  //   const dayAndDate = dateObject.toLocaleDateString(undefined, { day: 'numeric', month: 'long', year: 'numeric' });
+  //   return `${dayAndDate}`;
+  // };
+  const formatDate = (dateString) => {
+    const dateObject = new Date(dateString);
+    const dayOfMonth = dateObject.toLocaleDateString(undefined, { day: 'numeric' });
+    const month = dateObject.toLocaleDateString(undefined, { month: 'long' });
+    const year = dateObject.toLocaleDateString(undefined, { year: 'numeric' });
+
+    return `${dayOfMonth} ${month} ${year}`;
+  };
+
+
   return (
     <div>
       <table className='w-full border-separate border-spacing-2'>
@@ -23,8 +38,8 @@ const BooksTable = ({ books }) => {
             <th className='border border-slate-600 rounded-md font-bold'>No</th>
             <th className='border border-slate-600 rounded-md font-bold'>Title</th>
             <th className='border border-slate-600 rounded-md max-md:hidden font-bold'>Author</th>
+            <th className='border border-slate-600 rounded-md max-md:hidden font-bold'>Publish Date</th>
             <th className='border border-slate-600 rounded-md font-bold'>Cost</th>
-            <th className='border border-slate-600 rounded-md max-md:hidden font-bold'>Publish Year</th>
             <th className='border border-slate-600 rounded-md font-bold'>Operations</th>
           </tr>
         </thead>
@@ -34,8 +49,8 @@ const BooksTable = ({ books }) => {
               <td className='border border-slate-700 rounded-md text-center font-bold'>{index + 1}</td>
               <td className='border border-slate-700 rounded-md text-center font-bold'>{book.title}</td>
               <td className='border border-slate-700 rounded-md text-center max-md:hidden font-bold'>{book.author}</td>
+              <td className='border border-slate-700 rounded-md text-center max-md:hidden font-bold'>{formatDate(book.publishDate)}</td>
               <td className='border border-slate-700 rounded-md text-center font-bold'>{book.cost} ₹</td>
-              <td className='border border-slate-700 rounded-md text-center max-md:hidden font-bold'>{book.publishYear}</td>
               <td className='border border-slate-700 rounded-md text-center'>
                 <div className='flex justify-center gap-x-4'>
                   <BiShow className='text-2xl text-blue-600 hover:text-blue-900 cursor-pointer' onClick={() => handleModalOpen(book)} />

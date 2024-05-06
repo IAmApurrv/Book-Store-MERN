@@ -10,10 +10,25 @@ import BookModal from './BookModal';
 const BookSingleCard = ({ book }) => {
   const [showModal, setShowModal] = useState(false);
 
+  // const formatDate = (dateString) => {
+  //   const dateObject = new Date(dateString);
+  //   const dayAndDate = dateObject.toLocaleDateString(undefined, { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+  //   return `${dayAndDate}`;
+  // };
+  const formatDate = (dateString) => {
+    const dateObject = new Date(dateString);
+    // const day = dateObject.toLocaleDateString(undefined, { weekday: 'long' });
+    // const dayOfMonth = dateObject.toLocaleDateString(undefined, { day: 'numeric' });
+    // const month = dateObject.toLocaleDateString(undefined, { month: 'long' });
+    const year = dateObject.toLocaleDateString(undefined, { year: 'numeric' });
+
+    return `${year}`;
+  };
+
   return (
     <div className='bg-cyan-900 text-white rounded-lg px-4 py-2 m-4 relative hover:shadow-xl'>
       <h4 className='my-2 text-gray-500 mb-6'>{book._id}</h4>
-      <b className='absolute top-1 right-2 px-4 py-1 bg-red-600 rounded-lg'>{book.publishYear}</b>
+      <b className='absolute top-1 right-2 px-4 py-1 bg-red-600 rounded-lg'>{formatDate(book.publishDate)}</b>
 
       <div className='flex justify-start items-center gap-x-2'>
         <FaBookOpen className='text-purple-600 text-2xl' />

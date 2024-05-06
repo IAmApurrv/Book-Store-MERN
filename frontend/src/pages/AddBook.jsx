@@ -11,7 +11,7 @@ const AddBook = () => {
   const [imageURL, setImageURL] = useState('');
   const [description, setDescription] = useState('');
   const [cost, setCost] = useState('');
-  const [publishYear, setPublishYear] = useState('');
+  const [publishDate, setPublishDate] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const { enqueueSnackbar } = useSnackbar();
@@ -20,10 +20,10 @@ const AddBook = () => {
     const data = {
       title,
       author,
+      publishDate,
       imageURL,
       description,
-      cost,
-      publishYear
+      cost
     };
     setLoading(true);
     axios
@@ -62,6 +62,11 @@ const AddBook = () => {
         </div>
 
         <div className='my-2'>
+          <label className='text-xl mr-4 text-gray-300 font-bold'>Publish Date</label>
+          <input type='date' value={publishDate} onChange={(e) => setPublishDate(e.target.value)} className='px-4 py-2 w-full' />
+        </div>
+
+        <div className='my-2'>
           <label className='text-xl mr-4 text-gray-300 font-bold'>Image URL</label>
           <input type='text' value={imageURL} onChange={(e) => setImageURL(e.target.value)} className='px-4 py-2 w-full' />
         </div>
@@ -75,12 +80,6 @@ const AddBook = () => {
         <div className='my-2'>
           <label className='text-xl mr-4 text-gray-300 font-bold'>Cost</label>
           <input type='number' value={cost} onChange={(e) => setCost(e.target.value)} className='px-4 py-2 w-full' />
-
-        </div>
-
-        <div className='my-2'>
-          <label className='text-xl mr-4 text-gray-300 font-bold'>Publish Year</label>
-          <input type='number' value={publishYear} onChange={(e) => setPublishYear(e.target.value)} className='px-4 py-2 w-full' />
         </div>
 
         <button className='p-2 bg-cyan-300 mt-4 font-bold text-blue-900 hover:bg-cyan-600 hover:text-white' onClick={handleSaveBook}>Add</button>

@@ -19,11 +19,12 @@ DELETE /books/:id: Delete a book by its ID.
 {
   "title": "t1",
   "author": "a1",
+  "publishDate": "2000-12-30",
   "imageURL": "image.png",
-  "description": "this is description",
-  "cost": "100",
-  "publishYear": "2000"
+  "description": "This is description.",
+  "cost": 100
 }
+
 
 
 
