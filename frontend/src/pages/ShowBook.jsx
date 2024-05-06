@@ -24,41 +24,76 @@ const ShowBook = () => {
       });
   }, []);
 
+  const formatDate = (dateString) => {
+    const options = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+      hour12: true
+    };
+
+    const dateObject = new Date(dateString);
+    const time = dateObject.toLocaleTimeString(undefined, { hour: 'numeric', minute: 'numeric' });
+    const dayAndDate = dateObject.toLocaleDateString(undefined, { weekday: 'long', month: 'long', day: 'numeric' });
+
+    return `${time}, ${dayAndDate}`;
+  };
+
   return (
     <div className='p-4'>
       <BackButton />
-      <h1 className='text-3xl my-8 font-bold text-blue-900 text-center'>Show Book</h1>
       {loading ? (
         <Spinner />
       ) : (
-        <div className='bg-cyan-900 text-white flex flex-col justify-center rounded-xl w-fit p-4 mx-auto'>
-          <div className='my-4'>
-            <span className='text-xl mr-4 text-gray-300'>Id :</span>
-            <b>{book._id}</b>
+        <div className='my-4 flex'>
+          <div className='w-1/3 h-full flex justify-center rounded-xl bg-cover' style={{ backgroundImage: "url()" }}>
+            <img className='w-3/4 h-2/3 rounded-xl' src={book.imageURL} alt={book.title} />
           </div>
-          <div className='my-4'>
-            <span className='text-xl mr-4 text-gray-300'>Title :</span>
-            <b>{book.title}</b>
-          </div>
-          <div className='my-4'>
-            <span className='text-xl mr-4 text-gray-300'>Author :</span>
-            <b>{book.author}</b>
-          </div>
-          <div className='my-4'>
-            <span className='text-xl mr-4 text-gray-300'>Cost :</span>
-            <b>{book.cost} <span className="inline-block align-middle"><FaRupeeSign /></span></b>
-          </div>
-          <div className='my-4'>
-            <span className='text-xl mr-4 text-gray-300'>Publish Year :</span>
-            <b>{book.publishYear}</b>
-          </div>
-          <div className='my-4'>
-            <span className='text-xl mr-4 text-gray-300'>Create Time :</span>
-            <b>{new Date(book.createdAt).toString()}</b>
-          </div>
-          <div className='my-4'>
-            <span className='text-xl mr-4 text-gray-300'>Last Update Time :</span>
-            <b>{new Date(book.updatedAt).toString()}</b>
+
+          <div className='w-2/3 h-full mx-4 pt-6 p-8 bg-cyan-900 text-white flex flex-col rounded-xl'>
+            <div>
+              <h1 className='text-3xl mt-2 mb-2 font-bold text-center'>{book.title}</h1>
+              <div className='pb-4'>
+                <span className='text-xl mr-4 text-gray-300'>Author :</span>
+                <b>{book.author}</b>
+              </div>
+            </div>
+
+            <div className=''>
+              <b><i>{book.description}</i></b>
+            </div>
+
+            <div className='my-4'>
+              <table>
+                <tr>
+                  <td className='text-xl text-gray-300'>Cost</td>
+                  <td>: &nbsp;&nbsp;&nbsp;<b>{book.cost} ₹</b></td>
+                </tr>
+                <tr>
+                  <td className='text-xl text-gray-300'>Publish Year &nbsp;</td>
+                  <td>: &nbsp;&nbsp;&nbsp;<b>{book.publishYear}</b></td>
+                </tr>
+              </table>
+            </div>
+
+            <div className='mt-8'>
+              <table>
+                <tr>
+                  <td className='text-gray-300'>Book added at &nbsp;</td>
+                  <td>: &nbsp;&nbsp;<b>{formatDate(book.createdAt)}</b></td>
+                </tr>
+                <tr>
+                  <td className='text-gray-300'>Last update at &nbsp;</td>
+                  <td>: &nbsp;&nbsp;<b>{formatDate(book.updatedAt)}</b></td>
+                </tr>
+              </table>
+            </div>
+
+
           </div>
         </div>
       )}

@@ -6,14 +6,16 @@ const router = express.Router();
 // Route for Save a new Book
 router.post('/', async (request, response) => {
   try {
-    if (!request.body.title || !request.body.author || !request.body.publishYear || !request.body.cost) {
+    if (!request.body.title || !request.body.author || !request.body.imageURL || !request.body.description || !request.body.publishYear || !request.body.cost) {
       return response.status(400).send({
-        message: 'Send all required fields: title, author, publishYear, cost',
+        message: 'Send all required fields: title, author, imageURL, description, cost, publishYear',
       });
     }
     const newBook = {
       title: request.body.title,
       author: request.body.author,
+      imageURL: request.body.imageURL,
+      description: request.body.description,
       publishYear: request.body.publishYear,
       cost: request.body.cost
     };
@@ -56,9 +58,9 @@ router.get('/:id', async (request, response) => {
 // Route for Update a Book
 router.put('/:id', async (request, response) => {
   try {
-    if (!request.body.title || !request.body.author || !request.body.publishYear || !request.body.cost) {
+    if (!request.body.title || !request.body.author || !request.body.imageURL || !request.body.description || !request.body.publishYear || !request.body.cost) {
       return response.status(400).send({
-        message: 'Send all required fields: title, author, publishYear, cost',
+        message: 'Send all required fields: title, author, imageURL, description, cost, publishYear',
       });
     }
     const { id } = request.params;
