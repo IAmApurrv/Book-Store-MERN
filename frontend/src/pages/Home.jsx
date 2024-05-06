@@ -46,14 +46,14 @@ const Home = () => {
           </div>
         </Link> */}
         <Link to='/books/create' className='px-1 py-2 mr-2 rounded-lg hover:bg-cyan-900 hover:text-white flex items-center text-center rounded-lg'>
-            <div className="w-3/4">
-              <h1 className="text-lg font-bold">
-                Add a new Book
-              </h1>
-            </div>
-            <div className="w-1/4">
-              <IoMdAddCircle className='text-3xl' />
-            </div>
+          <div className="w-3/4">
+            <h1 className="text-lg font-bold">
+              Add a new Book
+            </h1>
+          </div>
+          <div className="w-1/4">
+            <IoMdAddCircle className='text-3xl' />
+          </div>
         </Link>
 
       </div>

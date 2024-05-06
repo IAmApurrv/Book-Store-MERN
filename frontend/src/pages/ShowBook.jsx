@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { FaRupeeSign } from "react-icons/fa";
 import { useParams } from 'react-router-dom';
 import BackButton from '../components/BackButton';
 import Spinner from '../components/Spinner';
@@ -38,7 +37,6 @@ const ShowBook = () => {
 
     return `${day}, ${dayOfMonth} ${month} ${year}`;
   };
-
 
   const formatDate2 = (dateString) => {
     const options = {

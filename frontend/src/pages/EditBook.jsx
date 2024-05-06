@@ -65,11 +65,11 @@ const EditBook = () => {
       .then((response) => {
         setLoading(false);
         enqueueSnackbar('Book Edited successfully', { variant: 'success' });
+        console.log(`Book updated - ` + data.title);
         navigate(`/books/details/${id}`);
       })
       .catch((error) => {
         setLoading(false);
-        // alert('An error happened. Please Chack console');
         enqueueSnackbar('Error', { variant: 'error' });
         console.log(error);
       });

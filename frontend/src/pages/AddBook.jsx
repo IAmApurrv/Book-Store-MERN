@@ -31,6 +31,7 @@ const AddBook = () => {
       .then((response) => {
         setLoading(false);
         enqueueSnackbar('Book Created successfully', { variant: 'success' });
+        console.log(`Book added - ` + response.data.title);
         navigate(`/books/details/${response.data._id}`);
         // console.log("Response from server:", response.data);
         // navigate(`/`);
