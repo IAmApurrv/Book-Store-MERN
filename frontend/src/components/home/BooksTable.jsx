@@ -29,7 +29,6 @@ const BooksTable = ({ books }) => {
     return `${dayOfMonth} ${month} ${year}`;
   };
 
-
   return (
     <div>
       <table className='w-full border-separate border-spacing-2'>
