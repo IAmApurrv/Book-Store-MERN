@@ -63,8 +63,8 @@ const ShowBook = () => {
               </div>
             </div>
 
-            <div className=''>
-              <b><i>{book.description}</i></b>
+            <div className='py-6'>
+              <i style={{ whiteSpace: 'pre-wrap' }}>{book.description}</i>
             </div>
 
             <div className='my-4'>
@@ -92,7 +92,6 @@ const ShowBook = () => {
                 </tr>
               </table>
             </div>
-
 
           </div>
         </div>

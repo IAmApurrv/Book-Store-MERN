@@ -28,10 +28,12 @@ const AddBook = () => {
     setLoading(true);
     axios
       .post('http://localhost:3000/books', data)
-      .then(() => {
+      .then((response) => {
         setLoading(false);
         enqueueSnackbar('Book Created successfully', { variant: 'success' });
-        navigate('/');
+        navigate(`/books/details/${response.data._id}`);
+        // console.log("Response from server:", response.data);
+        // navigate(`/`);
       })
       .catch((error) => {
         setLoading(false);
@@ -67,13 +69,13 @@ const AddBook = () => {
         <div className='my-2'>
           <label className='text-xl mr-4 text-gray-300 font-bold'>Description</label>
           {/* <input type='text' value={description} onChange={(e) => setDescription(e.target.value)} className='px-4 py-2 w-full' /> */}
-          <textarea value={description} rows={3} onChange={(e) => setDescription(e.target.value)} className='px-4 py-2 w-full' />
+          <textarea value={description} rows={5} onChange={(e) => setDescription(e.target.value)} className='px-4 py-2 w-full' />
         </div>
 
         <div className='my-2'>
           <label className='text-xl mr-4 text-gray-300 font-bold'>Cost</label>
           <input type='number' value={cost} onChange={(e) => setCost(e.target.value)} className='px-4 py-2 w-full' />
-          
+
         </div>
 
         <div className='my-2'>
