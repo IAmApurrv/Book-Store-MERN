@@ -85,27 +85,31 @@ const ShowBook = () => {
 
             <div className='my-4'>
               <table>
-                <tr>
-                  <td className='text-xl text-gray-300'>Cost</td>
-                  <td>: &nbsp;&nbsp;&nbsp;<b>{book.cost} ₹</b></td>
-                </tr>
-                <tr>
-                  <td className='text-xl text-gray-300'>Publish Date &nbsp;</td>
-                  <td>: &nbsp;&nbsp;&nbsp;<b>{formatDate(book.publishDate)}</b></td>
-                </tr>
+                <tbody>
+                  <tr>
+                    <td className='text-xl text-gray-300'>Cost</td>
+                    <td>: &nbsp;&nbsp;&nbsp;<b>{book.cost} ₹</b></td>
+                  </tr>
+                  <tr>
+                    <td className='text-xl text-gray-300'>Publish Date &nbsp;</td>
+                    <td>: &nbsp;&nbsp;&nbsp;<b>{formatDate(book.publishDate)}</b></td>
+                  </tr>
+                </tbody>
               </table>
             </div>
 
             <div className='mt-8'>
               <table>
-                <tr>
-                  <td className='text-gray-300'>Book added at &nbsp;</td>
-                  <td>: &nbsp;&nbsp;<b>{formatDate2(book.createdAt)}</b></td>
-                </tr>
-                <tr>
-                  <td className='text-gray-300'>Last update at &nbsp;</td>
-                  <td>: &nbsp;&nbsp;<b>{formatDate2(book.updatedAt)}</b></td>
-                </tr>
+                <tbody>
+                  <tr>
+                    <td className='text-gray-300'>Book added at &nbsp;</td>
+                    <td>: &nbsp;&nbsp;<b>{formatDate2(book.createdAt)}</b></td>
+                  </tr>
+                  <tr>
+                    <td className='text-gray-300'>Last update at &nbsp;</td>
+                    <td>: &nbsp;&nbsp;<b>{formatDate2(book.updatedAt)}</b></td>
+                  </tr>
+                </tbody>
               </table>
             </div>
 
